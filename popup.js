@@ -7,7 +7,7 @@ document.getElementById("openProfileBtn").addEventListener("click", function () 
 
       // Validate each LinkedIn profile URL using a simple regex
       const validUrls = linkedinUrls.filter(profileUrl => {
-        const urlRegex = /^https:\/\/www\.linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/;
+        const urlRegex = /^https:\/\/www\.linkedin\.com\//;
         return urlRegex.test(profileUrl);
       });
 
@@ -18,8 +18,8 @@ document.getElementById("openProfileBtn").addEventListener("click", function () 
         return;
       }
 
-      // Open each valid LinkedIn profile URL one by one in the current tab
-      openNextTab(validUrls, 0);
+      // Open all valid LinkedIn profile URLs in the current tab with a delay
+      openAllTabs(validUrls, 0);
     })
     .catch(error => {
       console.error('Error loading LinkedIn profile URLs:', error);
@@ -27,17 +27,14 @@ document.getElementById("openProfileBtn").addEventListener("click", function () 
     });
 });
 
-function openNextTab(urls, index) {
+function openAllTabs(urls, index) {
   // Open the next URL in the current tab
   if (index < urls.length) {
-    chrome.tabs.update({ url: urls[index] }, function (tab) {
+    chrome.tabs.update({ url: urls[index], active: false }, function (tab) {
       // Wait for the tab to load before opening the next one
-      chrome.tabs.onUpdated.addListener(function listener(tabId, info) {
-        if (tabId === tab.id && info.status === 'complete') {
-          chrome.tabs.onUpdated.removeListener(listener); // Remove the listener
-          openNextTab(urls, index + 1); // Open the next URL
-        }
-      });
+      setTimeout(function () {
+        openAllTabs(urls, index + 1); // Open the next URL with a delay
+      }, 3000); // 3000 milliseconds (3 seconds)
     });
   }
 }
