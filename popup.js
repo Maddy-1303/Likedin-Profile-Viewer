@@ -34,7 +34,7 @@ function openAllTabs(urls, index) {
       // Wait for the tab to load before opening the next one
       setTimeout(function () {
         openAllTabs(urls, index + 1); // Open the next URL with a delay
-      }, 3000); // 3000 milliseconds (3 seconds)
+      }, 10000); // 3000 milliseconds (3 seconds)
     });
   }
 }
@@ -47,5 +47,5 @@ function displayErrorMessage(message) {
   // Clear the error message after a short delay
   setTimeout(() => {
     errorMessageContainer.textContent = '';
-  }, 3000); // 3000 milliseconds (3 seconds)
+  }, 3000); 
 }
