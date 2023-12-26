@@ -1,7 +1,8 @@
 {
   "linkedinUrls": [
   
-"https://www.linkedin.com/sales/search/people?query=(recentSearchParam%3A(doLogHistory%3Atrue)%2Cfilters%3AList((type%3ACURRENT_COMPANY%2Cvalues%3AList((id%3Aurn%253Ali%253Aorganization%253A36130%2Ctext%3AFrazer%2520Jones%2CselectionType%3AINCLUDED%2Cparent%3A(id%3A0))))))&sessionId=fUh2Hd95QhSR0Zi3uI87Kw%3D%3D&viewAllFilters=true"
+"https://www.linkedin.com/sales/search/people?query=(recentSearchParam%3A(id%3A2686909057%2CdoLogHistory%3Atrue)%2Cfilters%3AList((type%3ACOMPANY_HEADCOUNT%2Cvalues%3AList((id%3AC%2Ctext%3A11-50%2CselectionType%3AINCLUDED)))))&sessionId=1igQvggZRnaMCPbhq6rRYQ%3D%3D&viewAllFilters=true",
+"https://www.linkedin.com/sales/search/people?query=(recentSearchParam%3A(id%3A2686909057%2CdoLogHistory%3Atrue)%2Cfilters%3AList((type%3ACOMPANY_HEADCOUNT%2Cvalues%3AList((id%3AC%2Ctext%3A11-50%2CselectionType%3AINCLUDED)))))&sessionId=1igQvggZRnaMCPbhq6rRYQ%3D%3D&viewAllFilters=true"
 
   ]
 }
